@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ToDoList</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="ToDoList.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="block">
+            <div class="top">
+                <h1>To do list</h1>
+            </div>
+            <div class="action">
+                <label for="finp">Введите задачу:</label><br>
+                <input type="text" id="inpTask"><br><br>
+                    <script>
+                        let taskArray = [];
+                        let addTask = document.getElementById("inpTask").value;
+            
+                        function addTaskArray(addTask) {
+                        taskArray.unshift({ id: (Date.now()), task: addTask })
+                        
+                        document.getElementById('output_tasks').innerHTML = addTask;
+                        }
+                    </script>
+                
+                <button type="button" id="btnAddTask" onclick="addTaskArray()">Добавить
+                    задачу</button><br><br>
+                
+                <label for="fname">Задачи на сегодня:</label><br>
+                <hr>
+                <span id="output_tasks"></span>
+                            
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+        
+    function outTask (taskArray){
+        result = taskArray.forEach(el=>Object.values(el).forEach((el,index)=>index==1?el:""))
+        //document.getElementById('output_tasks').innerHTML = result;
+    }
+
+      
+</script>
+
+</html>
